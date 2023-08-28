@@ -24,19 +24,6 @@
     <div id="animal-table"></div>
 
     <script>
-        // Function will accept a single parameter named "age"
-        function getAgeBracket(age) {
-            if (age < 0.9) {
-                return "Puppy";
-            } else if (age >= 0.9 && age <= 10) {
-                return "Adult";
-            } else if (age > 10 && age <= 15) {
-                return "Senior";
-            } else {
-                return "Geriatric";
-            }
-        }
-
         // Initialize a variable to store the HTML code for the table
         let tableHTML = '<table>';
 
@@ -65,17 +52,8 @@
 
         // Loop through the animals array and generate rows for each animal
         animals.forEach(animal => {
-            let ageBracket = "";
-
-            if (animal.age < 0.9) {
-                ageBracket = "Less than 0.9";
-            } else if (animal.age >= 0.9 && animal.age <= 10) {
-                ageBracket = "0.9 - 10";
-            } else if (animal.age > 10 && animal.age <= 15) {
-                ageBracket = "10.1 - 15";
-            } else {
-                ageBracket = "More than 15";
-            }
+            // Call the getAgeBracket function
+            const ageBracket = getAgeBracket(animal.age); 
 
             tableHTML += `<tr><td>${animal.id}</td><td>${animal.name}</td><td>${animal.owner}</td><td>${animal.weight}</td><td>${animal.age}</td><td>${ageBracket}</td></tr>`;
         });
@@ -85,6 +63,19 @@
 
         // Set the innerHTML of the 'animal-table' div to the generated table HTML
         document.getElementById('animal-table').innerHTML = tableHTML;
+
+        // Function will accept a single parameter named "age"
+        function getAgeBracket(age) {
+            if (age < 0.9) {
+                return "Puppy";
+            } else if (age >= 0.9 && age <= 10) {
+                return "Adult";
+            } else if (age > 10 && age <= 15) {
+                return "Senior";
+            } else {
+                return "Geriatric";
+            }
+        }
     </script>
 </body>
 </html>
