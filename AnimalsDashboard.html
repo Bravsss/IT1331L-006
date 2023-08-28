@@ -24,6 +24,19 @@
     <div id="animal-table"></div>
 
     <script>
+        // Function will accept a single parameter named "age"
+        function getAgeBracket(age) {
+            if (age < 0.9) {
+                return "Less than 0.9";
+            } else if (age >= 0.9 && age <= 10) {
+                return "0.9 - 10";
+            } else if (age > 10 && age <= 15) {
+                return "10.1 - 15";
+            } else {
+                return "More than 15";
+            }
+        }
+
         // Initialize a variable to store the HTML code for the table
         let tableHTML = '<table>';
 
