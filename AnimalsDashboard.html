@@ -21,18 +21,25 @@
 </head>
 <body>
     <h1>Animal Information</h1>
-    <div id = "animal-table"></div>
+    <div id="animal-table"></div>
 
     <script>
+        // Initialize a variable to store the HTML code for the table
         let tableHTML = '<table>';
+
+        // Add the header row to the table
         tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>';
 
+        // Define an array of objects containing animal information
         const animals = [
             { id: 1, name: "Fluffy", owner: "Alice", weight: 12, age: 3 },
             { id: 2, name: "Max", owner: "Bob", weight: 20, age: 5 }
         ];
 
+        // Close the table HTML
         tableHTML += '</table>';
+
+        // Set the innerHTML of the 'animal-table' div to the generated table HTML
         document.getElementById('animal-table').innerHTML = tableHTML;
     </script>
 </body>
